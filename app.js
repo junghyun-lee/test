@@ -35,28 +35,30 @@ app.use(myLogger_1);
 app.use('/', routes);
 app.use('/users', users);
 
-//문자열
-//?, +, * 및 () 문자는 정규식 문자의 서브세트입니다. 하이픈(-) 및 점(.)은 문자열 기반 경로에 의해 문자 그대로 해석됩니다.
-
-//butterfly 및 dragonfly와 일치하지만, butterflyman 및 dragonfly man 등과 일치하지 않습니다.
-app.get(/.*fly$/, function(req, res) {
-    res.send('/.*fly$/');
+//2개이상의 콜백함수는 하나의 라우터 처리가능 반드시 next()포함
+app.get('/example/b', function (req, res, next) {
+    console.log('the response will be sent by the next function ...');
+    next();
+}, function (req, res) {
+    res.send('Hello from B!');
 });
 
-//a포함 모든 항목
-app.get(/a/, function(req, res) {
-    res.send('/a/');
-});
+//하나의 콜백함수 배열은 하나의 라우터 처리가능
+var cb0 = function (req, res, next) {
+    console.log('CB0');
+    next();
+}
 
-//abcd, abxcd, abRABDOMcd 및 ab123cd 등
-app.get('/ab*cd', function(req, res) {
-    res.send('ab*cd');
-});
+var cb1 = function (req, res, next) {
+    console.log('CB1');
+    next();
+}
 
-///abe 및 /abcde 등
-app.get('/ab(cd)?e', function(req, res) {
-    res.send('ab(cd)?e');
-});
+var cb2 = function (req, res) {
+    res.send('Hello from C!');
+}
+
+app.get('/example/c', [cb0, cb1, cb2]);
 
 app.use(function(req, res, next) {
     res.status(404).send('Sorry cant find that!');
