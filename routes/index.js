@@ -13,9 +13,7 @@ router.use(function(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //res.render('index', { title: 'Express' , title2:'svsd'});
-  //res.render('index', {user:{name:'Dalkom'}});
-    next();
+  res.render('index', {user:{name:'Dalkom'}});
 });
 
 module.exports = router;
