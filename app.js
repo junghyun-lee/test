@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+var cors = require('cors');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -14,6 +15,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(cors());// same-origin policy 우회 방법
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));//파비콘 적용 안됨
 app.use(logger('dev'));//개발용 response에 따른 색상 구별
 app.use(express.static(path.join(__dirname, 'public')));
