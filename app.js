@@ -20,9 +20,10 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));//파비콘 적�
 app.use(logger('dev'));//개발용 response에 따른 색상 구별
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('routes'));
-app.use(bodyParser.json());//application x www form urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));// parse application/x-www-form-urlencoded
+app.use(bodyParser.json());// parse application/json
+app.use(methodOverride());//X-HTTP-Method-Override Header
 app.use(cookieParser());
-
 app.use(logger('combined'));
 app.use('/', routes);
 app.use('/users', users);
