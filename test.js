@@ -1,16 +1,24 @@
-/**
- * Created by leejunghyun on 16. 1. 29..
- */
-var express = require('express')
-    , cors = require('cors')
-    , app = express();
+var express = require('express');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var flash = require('connect-flash');
+var app = express();
+var passport = require('passport')
+    , LocalStrategy = require('passport-local').Strategy;
 
-app.use(cors());
+app.use(cookieParser());
+app.use(session({secret:'foo',  cookie: { maxAge: 60000, secure:true}}));//session 설정
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/products/:id', function(req, res, next){
-    res.json({msg: 'This is CORS-enabled for all origins!'});
+app.get('/', function(req, res,next){
+    console.log(req.session);
+    next();
 });
 
-app.listen(3000, function(){
-    console.log('CORS-enabled web server listening on port 80');
+app.get('/test', function(req, res){
+    res.send(JSON.stringify(req.flash('test')));
 });
+
+app.listen(3000);
