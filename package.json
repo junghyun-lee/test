@@ -19,6 +19,7 @@
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
+    "passport-kakao": "0.0.3",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
     "path": "^0.12.7",

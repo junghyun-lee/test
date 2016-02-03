@@ -11,6 +11,7 @@ var methodOverride = require('method-override');
 var app = express();
 var passport = require('passport')
     , FacebookStrategy = require('passport-facebook').Strategy
+    , KakaoStrategy = require('passport-kakao').Strategy
     , TwitterStrategy = require('passport-twitter').Strategy;
 
 // serialize
@@ -38,6 +39,15 @@ passport.use(new FacebookStrategy({
     function(accessToken, refreshToken, profile, done) {
         console.log(profile);
         done(null,profile);
+    }
+));
+
+passport.use(new KakaoStrategy({
+        clientID : '8650aae30233db35b3ccf2a06d36c948',
+        callbackURL : "http://localhost:3000/auth/kakao/callback"
+    },
+    function(accessToken, refreshToken, profile, done){
+            done(null, profile);
     }
 ));
 
@@ -70,6 +80,10 @@ app.use(passport.session());
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/kakao', passport.authenticate('kakao'));
+
+app.get('/auth/kakao/callback', passport.authenticate('kakao', { successRedirect: '/login_success',
+    failureRedirect: '/login_fail' }));
 
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { successRedirect: '/login_success',
