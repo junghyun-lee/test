@@ -20,6 +20,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
     "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
     "path": "^0.12.7",
     "serve-favicon": "^2.3.0"
   },
@@ -27,7 +28,7 @@
     "twitter": {
       "TWITTER_CONSUMER_KEY": "rR9kdMiq2pVczGwLYF9pBfH78",
       "TWITTER_CONSUMER_SECRET": "5DuwUQsyU2YRQpEzOzRElAgp3ZZotMHU3zhYUfTE01tec8WDOl",
-      "callbackURL": "http://182.161.117.18/auth/twitter/callback"
+      "callbackURL": "http://localhost:3000/auth/twitter/callback"
     }
   }
 }

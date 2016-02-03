@@ -10,7 +10,8 @@ var cors = require('cors');
 var methodOverride = require('method-override');
 var app = express();
 var passport = require('passport')
-    , FacebookStrategy = require('passport-facebook').Strategy;
+    , FacebookStrategy = require('passport-facebook').Strategy
+    , TwitterStrategy = require('passport-twitter').Strategy;
 
 // serialize
 // 인증후 사용자 정보를 세션에 저장
@@ -39,6 +40,18 @@ passport.use(new FacebookStrategy({
         done(null,profile);
     }
 ));
+
+passport.use(new TwitterStrategy({
+        consumerKey: 'rR9kdMiq2pVczGwLYF9pBfH78',
+        consumerSecret: '5DuwUQsyU2YRQpEzOzRElAgp3ZZotMHU3zhYUfTE01tec8WDOl',
+        callbackURL: "http://localhost:3000/auth/twitter/callback"
+    },
+    function(accessToken, refreshToken, profile, done) {
+        console.log(profile);
+        done(null,profile);
+    }
+));
+
 var app = express();
 
 // all environments
@@ -56,9 +69,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/twitter', passport.authenticate('twitter'));
 
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { successRedirect: '/login_success',
+        failureRedirect: '/login_fail' }));
+
+app.get('/auth/twitter/callback',
+    passport.authenticate('twitter', { successRedirect: '/login_success',
         failureRedirect: '/login_fail' }));
 
 app.get('/login_success', ensureAuthenticated, function(req, res){
