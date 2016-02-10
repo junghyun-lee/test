@@ -1,0 +1,104 @@
+@charset "utf-8";
+#livere_info1{ display:none; }
+#emptyStarWrapper { position: absolute; right: 14%; }
+#livere_attachActionWrapper { top: 27px; *top: -15px; right: 34px; }
+#livere_platform_wrapper #livere_pltform_middle #livere_linkInputWrapper { top: 27px; *top: -15px; right: 0px; *right: 0px; }
+#livereWriteForm { background: none; }
+#livere_sangsanguniv.livere_loggedSNS .livereSNSLoginIcon { border: 1px solid #bf0556; }
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormMiddle #livereWriteFromMiddleLeft #liverePrimaryStatus #liverePrimaryThumb.notLoggedThumb {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/profile.gif") no-repeat 2px 2px #ffffff;
+    -webkit-background-size: 37px;
+    background-size: 37px;
+}
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer #livereNotLogged #livere_sangsanguniv button .livereSNSImage_B {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/off.png") no-repeat 4px 4px;
+}
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer .livere_p_sangsanguniv { border: 2px solid #007a7a; }
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer #livereLogged #livere_sangsanguniv button {
+    background-color: #dc0963; background-image: none; filter:none;
+}
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer #livereLogged #livere_sangsanguniv button .livereSNSImage_B {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/on.png") no-repeat 0px 0px;
+}
+#livereContainer #liverePlugIn .livere_pWriter_sangsanguniv { background-color: #dc0963; }
+#livereContainer #liverePlugIn #livereReplyWrapper .livereParentReplyWrapper button .livereFavicon_L_sangsanguniv {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/icon2.gif") no-repeat 0px 0px;
+}
+#livereContainer #liverePlugIn #livereReplyWrapper .livereParentReplyWrapper .livereReplyBodyContainer .livereReplyBody .livereChildReplyWrapper .livereChildReply button .livereFavicon_S_sangsanguniv {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/icon.gif") no-repeat 0px 0px;
+}
+/* mobile */
+/*.livere_mobile { zoom: 1.5; }
+.livere_mobile span, .livere_mobile strong, .livere_mobile p, .livere_mobile b, .livere_mobile a, .livere_mobile #checkin_tip_layer li, .livere_mobile #checkin_tip_layer li b  { zoom: 1.04; }
+.livere_mobile #checkin_tip_layer { zoom: 1.03; }
+.livere_mobile #checkin_tip_layer strong, .livere_mobile #livereReplyCountWrapper, #livereReplySort #livereRatingAvgTitle, .livere_mobile #livereHomeBtn { zoom: 1.02; }
+.livere_mobile #smartLoginWrapper #smartLoginContent_list #smartLogin_sangsanguniv .loginSns_center span { zoom: 1.01; }
+.livere_mobile #livereReplyWrapper .livereReplyEvaluationBtn span { zoom: 1; }*/
+.livere_mobile #smartLoginWrapper #smartLoginContent_list #smartLogin_sangsanguniv.off .loginSns_left {
+    background: url("http://storage.ixcloud.net/101.livere.co.kr/consumers/sangsanguniv/60x60_out.png") no-repeat 16px 10px;
+    -webkit-background-size: 25px;
+    background-size: 25px;
+}
+.livere_mobile #smartLoginWrapper #smartLoginContent_list #smartLogin_sangsanguniv.on .loginSns_left {
+    background: url("http://storage.ixcloud.net/101.livere.co.kr/consumers/sangsanguniv/60x60.png") no-repeat 16px 10px;
+    -webkit-background-size: 25px;
+    background-size: 25px;
+    border-right: 1px solid #c21559;
+}
+.livere_mobile #smartLoginWrapper #smartLoginContent_list #smartLogin_sangsanguniv.on {
+    border: 1px solid #c21559;
+    border-bottom: 1px solid #c21559;
+    background: #ea69a2;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ea69a2', endColorstr='#c21559');
+    background: -webkit-gradient(linear, left top, left bottom, from(#ea69a2), to(#c21559));
+    background: -moz-linear-gradient(top, #ea69a2, #c21559);
+}
+.livere_mobile #liverePlugIn .livere_pWriter_sangsanguniv {
+    background: url("http://storage.ixcloud.net/101.livere.co.kr/consumers/sangsanguniv/32x32.png") no-repeat 2px 2px;
+    background-color: #DC0963;
+    -webkit-background-size: 17px;
+    background-size: 17px;
+    border: 1px solid #DC0963;
+}
+.livere_mobile #liverePlugIn .livere_pWriter_sangsanguniv #livereAccInfo { /* ȸ��α��� �� �۾��� ���� �� ������ ������ ����*/
+    padding-left: 12px;
+}
+.livere_mobile #liverePlugIn .livereFavicon_mobile_L.livereFavicon_mobile_L_sangsanguniv, .livere_mobile #liverePlugIn .livereFavicon_mobile_S.livereFavicon_mobile_S_sangsanguniv {
+    background: url("http://storage.ixcloud.net/101.livere.co.kr/consumers/sangsanguniv/32x32.png") no-repeat 0 0; -webkit-background-size: 17px; background-size: 17px;
+}
+#livereContainer.livere_mobile #smart_view_container { position: relative; zoom: 1 !important; }
+.livere_mobile #smartLoginTop_title #smartLogin_close { width: 18px; }
+#livereContainer { zoom: 1.334; }
+
+.livere_mobile #livereReplyWrapper .livereReply_good span {
+    background-position: -176px -174px;
+}
+.livere_mobile #livereReplyWrapper .livereReply_bad span {
+    background-position: -176px -198px;
+}
+#livereVideoAttachForm #livereVideoFindBtn {
+    width: 70px;
+    height: 25px;
+    margin-top: -26px;
+}
+#livereVideoAttachForm #livereVideoFindInput {
+    width: 95%;
+    height: 25px;
+}
+#livereReplyWrapper .livereArticleText p {
+    font-size: 15px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#livereImageAttachInputFile{
+    font-size: 14px !important;
+}
+#livereReplySort{
+    font-size: 12px !important;
+}
+.livere_mobile #smartLoginContent #smartLogin_done {margin: 10px auto 30px !important;}
+.livere_mobile #livereWriteFormMiddleRight .livereAccInfoWrapper #livereAccInfo{padding-left: 15px;}
+
+.livere_mobile #smartLoginContent_list #smartLogin_naver.off .loginSns_left { background-position: 17px -891px !important; }
+.livere_mobile #smartLoginContent_list #smartLogin_linkedIn.off .loginSns_left { background-position: 17px -853px !important; }
+.livere_mobile #smartLoginContent_list #smartLogin_google_plus.off .loginSns_left { background-position: 17px -809px !important; }

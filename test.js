@@ -8,11 +8,13 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var methodOverride = require('method-override');
-var app = express();
+var RedisStore  = require('connect-redis')(session);
 var passport = require('passport')
     , FacebookStrategy = require('passport-facebook').Strategy
     , KakaoStrategy = require('passport-kakao').Strategy
     , TwitterStrategy = require('passport-twitter').Strategy;
+
+var app = express();
 
 // serialize
 // 인증후 사용자 정보를 세션에 저장
@@ -62,8 +64,6 @@ passport.use(new TwitterStrategy({
     }
 ));
 
-var app = express();
-
 // all environments
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -74,7 +74,15 @@ app.use(express.static('routes'));
 app.use(bodyParser.urlencoded({ extended: false }));// parse application/x-www-form-urlencoded
 app.use(bodyParser.json());// parse application/json
 app.use(methodOverride());//X-HTTP-Method-Override Header
-app.use(session({ secret: 'your secret here' }));
+//app.use(session({ secret: 'your secret here',cookie: { maxAge: 2592000000 }}));
+app.use(session({ store: new RedisStore({
+    host:'localhost',
+    port:'6379',
+    pass:'1234'
+    }),
+    secret: 'foo',
+    cookie: { maxAge: 2592000000 }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 

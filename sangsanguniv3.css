@@ -1,0 +1,74 @@
+@charset "utf-8";
+#livere_info1{
+    display:none;
+}
+#emptyStarWrapper {
+    position: absolute;
+    right: 14%;
+}
+#livere_attachActionWrapper {
+    top: 27px;
+    *top: -15px;
+    right: 34px;
+}
+#livere_platform_wrapper #livere_pltform_middle #livere_linkInputWrapper {
+    top: 27px;
+    *top: -15px;
+    right: 0px;
+    *right: 0px;
+}
+#livereWriteForm {
+    background: none;
+
+}
+#livere_sangsanguniv.livere_loggedSNS .livereSNSLoginIcon {
+    border: 1px solid #bf0556;
+}
+
+/*비로그인, 로그인시 프로필*/
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormMiddle #livereWriteFromMiddleLeft #liverePrimaryStatus #liverePrimaryThumb.notLoggedThumb, #liverePrimaryThumb img {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/profile.gif") no-repeat 3px 3px #fff;
+}
+/*비 로그인 회원연동버튼*/
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer #livereNotLogged #livere_sangsanguniv button .livereSNSImage_B{
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/off.png") no-repeat 4px 4px;
+}
+
+/*회원연동 로그인 후 테두리 및 아이콘 및 배경*/
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer .livere_p_sangsanguniv {
+    border: 2px solid #007a7a;
+}
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer #livereLogged #livere_sangsanguniv button {
+    background-color: #dc0963;
+    background-image: none;
+    filter:none;
+}
+#livereContainer #liverePlugIn #livereWriteForm #livereWriteFormTop #livereSNSLoginIconContainer #livereLogged #livere_sangsanguniv button .livereSNSImage_B {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/on.png") no-repeat 0px 0px;
+}
+
+/*3번 계정명영역 색상변경*/
+#livereContainer #liverePlugIn .livere_pWriter_sangsanguniv{
+    background-color: #dc0963;
+}
+
+/*댓글 프로필 위 작은아이콘 18X18*/
+#livereContainer #liverePlugIn #livereReplyWrapper .livereParentReplyWrapper button .livereFavicon_L_sangsanguniv {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/icon2.gif") no-repeat 0px 0px;
+}
+
+/*댓댓글 프로필 위 작은아이콘 15X15*/
+#livereContainer #liverePlugIn #livereReplyWrapper .livereParentReplyWrapper .livereReplyBodyContainer .livereReplyBody .livereChildReplyWrapper .livereChildReply button .livereFavicon_S_sangsanguniv {
+    background: url("//101.livere.co.kr/consumers/sangsanguniv/icon.gif") no-repeat 0px 0px;
+}
+/* font 적용 */
+/*@font-face {
+    font-family: Apres Regular;
+    font-style:  normal;
+    font-weight: normal;
+    src: url(//101.livere.co.kr/consumers/sangsanguniv/SangSangBodyL.ttf) !important;
+}
+
+#liverePlugIn * {
+	font-family: 'Apres Regular';
+}*/
