@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var path = require('path');
@@ -6,6 +7,7 @@ var flash = require('connect-flash');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+var multiparty = require('connect-multiparty');
 var cors = require('cors');
 var methodOverride = require('method-override');
 var RedisStore  = require('connect-redis')(session);
@@ -113,7 +115,22 @@ app.get('/logout', function(req, res){
 app.get('/',function(req,res){
     console.log(req.session);
     res.send("야호");
-})
+});
+
+app.post('/upload', multiparty(), function(req,res){
+    fs.readFile(req.files.uploadFile.path, function(error,data){
+        var destination = req.files.uploadFile.name;
+        fs.writeFile(destination,data,function(error){
+            if(error){
+                console.log(error);
+                throw error;
+            }else{
+                res.redirect('back');
+            }
+        });
+    });
+});
+
 function ensureAuthenticated(req, res, next) {
     // 로그인이 되어 있으면, 다음 파이프라인으로 진행
     if (req.isAuthenticated()) { return next(); }
