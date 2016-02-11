@@ -16,6 +16,8 @@ var passport = require('passport')
     , KakaoStrategy = require('passport-kakao').Strategy
     , TwitterStrategy = require('passport-twitter').Strategy;
 
+var uploadRoutes = require('./routes/upload/');
+
 var app = express();
 
 // serialize
@@ -117,19 +119,9 @@ app.get('/',function(req,res){
     res.send("야호");
 });
 
-app.post('/upload', multiparty(), function(req,res){
-    fs.readFile(req.files.uploadFile.path, function(error,data){
-        var destination = req.files.uploadFile.name;
-        fs.writeFile(destination,data,function(error){
-            if(error){
-                console.log(error);
-                throw error;
-            }else{
-                res.redirect('back');
-            }
-        });
-    });
-});
+app.get('/image', uploadRoutes.confirmHandler);
+
+app.post('/upload', multiparty() ,uploadRoutes.uploadHandler);
 
 function ensureAuthenticated(req, res, next) {
     // 로그인이 되어 있으면, 다음 파이프라인으로 진행
